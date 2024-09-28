@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="row">
+                    <div class="col-12 col-lg-4 d-flex p-3 justify-content-center justify-content-lg-start">
+                        <img src="http://api.hellohotshot.co/uploads/1708063288253.png" alt="" class="with-in-mobile-50"
+                            style="width: 30% !important;
+                        @media (max-width:700px){
+                            width: 30% !important;
+                        }
+                        " />
+                    </div>
+                    <div class="col-12 col-lg-8 p-3 " style="
+                    display: flex; 
+                    flex-direction: 
+                    column; justify-content: 
+                    flex-end; align-items: 
+                    flex-start;
+                    @media (max-width: 700px){
+                        align-items: center Im !important;
+                    }
+                    ">
+                        <h4 class="text-center text-lg-start" style="font-size: 33px !important;">project quote</h4>
+                        <h1 class="text-center text-lg-start" style="font-size: 64px !important;">${{riderAmount}}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <img src="http://api.hellohotshot.co/uploads/1708063157471.png" class="w-100 mt-5 " alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Nav -->
+    {{!-- <div class="container mb-3 mt-3 d-flex f-d-column  justify-content-center p-3 " style="
+            @media (max-width:700px){
+                flex-direction: column !important;
+            }
+        ">
+        <a href="cargo.html" class="btn btn-secondary m-1 w-100" style="font-size: 23px !important;">cargo</a>
+        <a href="equipmenttool.html" class="btn btn-secondary m-1 w-100" style="font-size: 23px !important;">equipment
+            +tools</a>
+        <a href="pickupdate.html" class="btn btn-secondary m-1 w-100" style="font-size: 23px !important;">pick-up
+            date</a>
+        <a href="summary.html" class="btn btn-primary m-1 w-100"
+            style="font-size: 23px !important; background-color: #2b2728; border-color: #2b2728 !important;">summary</a>
+    </div> --}}
+    <!-- Nav -->
+
+    <!-- Client Info -->
+    <div class="container mb-3 mt-3">
+        <form action="">
+            <div class="row">
+
+                <div class="col-12 col-lg-6 p-3">
+                    <h4 style="font-size: 33px !important;">CLIENT INFORMATION: </h4>
+                    <div class="col-12 mb-3">
+                        {{#eq Remail email}}
+                        <div class="input">
+                            <input value={{firstName}} type="text" class="form-control mb-3" placeholder="First Name "
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{lastName}} type="text" class="form-control mb-3" placeholder="Last Name"
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{mobile}} type="number" class="form-control mb-3" placeholder="Mobile" name=""
+                                id="">
+                        </div>
+                        <div class="input">
+                            <input value={{email}} type="email" class="form-control mb-3" placeholder="Email" name=""
+                                id="">
+                        </div>
+                        {{else}}
+                        <div></div>
+
+                        {{/eq}}
+                    </div>
+                    <h4 style="font-size: 33px !important;">PICK-UP INFORMATION: </h4>
+                    <div class="col-12 mb-3">
+                        {{#eq Remail email}}
+                        <div></div>
+                        {{else}}
+                        <div class="input">
+                            <input value={{firstName}} type="text" class="form-control mb-3" placeholder="First Name "
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{lastName}} type="text" class="form-control mb-3" placeholder="Last Name"
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{mobile}} type="number" class="form-control mb-3" placeholder="Mobile" name=""
+                                id="">
+                        </div>
+                        <div class="input">
+                            <input value={{email}} type="email" class="form-control mb-3" placeholder="Email" name=""
+                                id="">
+                        </div>
+                        {{/eq}}
+                    </div>
+                    <div class="input">
+                        <div class="form-control mb-3">
+                            {{pickupBusinessName}}
+                        </div>
+                    </div>
+                    <div class="input">
+                        <div class="form-control mb-3">
+                            {{pickupAddress}}
+                        </div>
+                        <div class="form-control mb-3">
+                            {{pickupAddress1}}
+                        </div>
+
+
+                    </div>
+                    <div class="input d-flex">
+                        <input value={{pickupCity}} type="text" class="form-control " placeholder="City" name="" id="">
+                        <input value={{pickupState}} type="text" class="form-control mx-3" placeholder="State" name=""
+                            id="">
+                        <input value={{pickupZip}} type="text" class="form-control " placeholder="Zip Code" name=""
+                            id="">
+                    </div>
+                    <br><br>
+                    {{#eq quotationType 'junkHaulOff'}}
+                    <div></div>
+                    {{else}}
+                    <h4 style="font-size: 33px !important;">DROP-OFF INFORMATION: </h4>
+                    <div class="col-12 mb-3">
+                        {{#eq Remail email}}
+                        <div></div>
+                        {{else}}
+                        <div class="input">
+                            <input value={{RefirstName}} type="text" class="form-control mb-3" placeholder="First Name "
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{RelastName}} type="text" class="form-control mb-3" placeholder="Last Name"
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{Remobile}} type="number" class="form-control mb-3" placeholder="Mobile"
+                                name="" id="">
+                        </div>
+                        <div class="input">
+                            <input value={{Remail}} type="email" class="form-control mb-3" placeholder="Email" name=""
+                                id="">
+                        </div>
+                        {{/eq}}
+                    </div>
+                    {{/eq}}
+
+
+                </div>
+                <div class="input">
+                    <div class="form-control mb-3">
+                        {{ReBusinessName}}
+                    </div>
+                </div>
+                <div class="input">
+                    <div class="form-control mb-3">
+                        {{ReAddress}}
+                    </div>
+                    <div class="form-control mb-3">
+                        {{ReAddress1}}
+                    </div>
+
+
+                </div>
+                <div class="input d-flex">
+                    <input value={{ReCity}} type="text" class="form-control " placeholder="City" name="" id="">
+                    <input value={{ReState}} type="text" class="form-control mx-3" placeholder="State" name="" id="">
+                    <input value={{ReZip}} type="text" class="form-control " placeholder="Zip Code" name="" id="">
+                </div>
+            </div>
+
+
+    </div>
+    </form>
+
+    </div>
+    <!-- Client Info -->
+
+    <!-- Cargo -->
+    <div class="container mb-3 mt-3">
+        <form action="">
+            <div class="row">
+                <div class="col-12 col-lg-6 p-3">
+                    <div class=" row ">
+
+                        {{#eq quotationType 'motorVehicles'}}
+                        <div class="col-12 mb-3">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">VEHICLE INFORMATION: </h4>
+                            </div>
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">VEHICLE LOAD BY: </h4>
+                            </div>
+                            <div class="input">
+                                <div class="form-control mb-3">
+                                    {{vehicleLoadBy}}
+                                </div>
+
+                            </div>
+                            <div class="input d-flex">
+                                <div class="form-control ">{{year}}</div>
+                                <div class="form-control mx-3">{{make}}</div>
+                                <div class="form-control ">{{model}}</div>
+                            </div>
+                        </div>
+                        {{else}}
+                        <div class="col-12 mb-3">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">CARGO INFORMATION: </h4>
+                            </div>
+                            <div class="input">
+                                <div class="form-control mb-3">
+                                    {{length}}
+                                </div>
+
+                            </div>
+                            <div class="input">
+                                <div class="form-control mb-3">
+                                    {{weight}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">CARGO DESCRIPTION: </h4>
+                            </div>
+                            <div class="input">
+                                <textarea name="" class="form-control" id="" cols="35"
+                                    rows="5">{{cargoDescription}}</textarea>
+                            </div>
+                        </div>
+                        {{/eq}}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 p-3">
+                    <h4 style="font-size: 33px !important;"> MEDIA: </h4>
+                    {{#each media}}
+                    <a href={{this.src}}>{{this.src}}</a>
+                    {{/each}}
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- Cargo -->
+
+    <!-- Equipment + Tool -->
+    <div class="container mb-3 mt-3">
+        <form action="">
+            <div class="row">
+                <div class="col-12 col-lg-6 p-3">
+                    <div class=" row ">
+                        {{#eq quotationType 'motorVehicles'}}
+                        <div></div>
+                        {{else}}
+                        <div class="col-12 mb-3">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">LOAD METHOD: </h4>
+                            </div>
+                            <div class="input">
+                                <input type="number" class="form-control mb-3" placeholder={{cargoLoadedBy}} disabled
+                                    pname="" id="">
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">UNLOAD METHOD: </h4>
+                            </div>
+                            <div class="input">
+                                <input value={{cargoUnloadBy}} type="number" class="form-control mb-3"
+                                    placeholder={{cargoUnloadBy}} disabled pname="" id="">
+                            </div>
+                        </div>
+                        {{/eq}}
+
+                        <div class="col-12">
+                            <div class="heading">
+                                <h4 style="font-size: 33px !important;">TOOLS REQUIRED: </h4>
+                            </div>
+                            <div class="input">
+                                <div class="row">
+                                    <div class="col-12 col-lg-4">
+                                        {{toolsRequired}}
+                                        {{#each toolsRequired}}
+
+                                        <br>
+                                        {{/each}}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 p-3">
+                    <div class=" row ">
+                        <div class="col-12 mb-3">
+                            <div class="heading mb-3">
+                                <h4 style="font-size: 33px !important;">YOUR CARGO IS READY FOR PICK-UP ON: </h4>
+                            </div>
+                            <div class="date">
+                                <h1 class="text-center text-lg-start" style="font-size: 64px !important;">{{pickupDate}}
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </form>
+
+    </div>
+
+    <!-- Equipment + Tool -->
+
+    <!-- N&B -->
+    <div class="container  mt-3">
+        <div class="row">
+            <div class="col-12 col-lg-4"></div>
+            <div class="col-12 col-lg-4"></div>
+            {{!-- <div class="col-12 col-lg-4 d-flex justify-content-center">
+                <a href="pickupdate.html" class="btn btn-secondary m-1 w-100">Back</a>
+                <a href="#" class="btn btn-primary m-1 w-100">Submit</a>
+            </div> --}}
+        </div>
+    </div>
+    <!-- N&B -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
