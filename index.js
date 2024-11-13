@@ -1361,3 +1361,5 @@ var server = http.createServer(app);
 server.listen(PORT, () => {
   console.log("Listening at Port", PORT);
 });
+
+module.exports = app;
