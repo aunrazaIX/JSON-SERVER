@@ -5,14 +5,14 @@
 // const cors = require("cors");
 // const morgan = require("morgan");
 // var http = require("http");
-// const app = express();
+const app = express();
 // const bodyParser = require("body-parser");
 // const PORT = process.env.PORT;
 
-// app.use(cors());
-// app.use(morgan("dev"));
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(cors());
+app.use(morgan("dev"));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 
 // app.post("/api/Account/Login", (req, res) => {
 //   console.log(req.body);
@@ -1362,4 +1362,4 @@
 //   console.log("Listening at Port", PORT);
 // });
 
-// module.exports = app;
+module.exports = app;
