@@ -1359,7 +1359,7 @@ app.post("/api/LeaveManagement/CreateLeaveRequest", (req, res) => {
 var server = http.createServer(app);
 
 server.listen(PORT, () => {
-  console.log("Listening at Port", PORT);
+  console.log("Listesning at Port", PORT);
 });
 
 module.exports = app;
