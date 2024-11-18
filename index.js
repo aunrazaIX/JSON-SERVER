@@ -1290,49 +1290,39 @@ app.post("/api/PendingApprovals/ProcessPendingApproval", (req, res) => {
       totalEntitledLeaves: 42.5,
       totalRemainingLeaves: 36.5,
       totalAvailedLeaves: 6,
-      managerHistories: [
+      approvalHistory: [
         {
+          level: "Level 1",
           actionType: "RESPOND",
           actionSource: "APPROVED",
           originalRecipient: "MATEEQ",
           fromUser: "Zohaib Ghaffar - 32722",
           toUser: "Muhammad Ateeq Ur Rehman - 21686",
-          notificationId: 19491690,
+          notificationId: 19491711,
           managerEIN: "21686",
           managerUserName: "Muhammad Ateeq Ur Rehman",
           managerPosition:
             "Unit Head System Implementation.System Implementation - Information Technology Group",
           managerPositionShortName: "Unit Head System Implementation",
-          userComment: "for the testing purpose - IX",
-          level: "Level 1",
-          remarks: [
-            {
-              level: "Level 1",
-              remark: "for the testing purpose - IX",
-            },
-          ],
+          userComment: "ix-LATEST_TESTING",
+          remarks: [],
         },
         {
-          actionType: "RESPOND",
-          actionSource: "REJECTED",
+          level: "Level 2",
+          actionType: "SEND",
+          actionSource: "API",
           originalRecipient: "GHUSSAIN01",
           fromUser: "Muhammad Ateeq Ur Rehman - 21686",
           toUser: "Ghulam Hussain - 16946",
-          notificationId: 19491692,
+          notificationId: 19491713,
           managerEIN: "16946",
           managerUserName: "Ghulam Hussain",
           managerPosition:
             "Divisional Head System Development & Implementation.System Development & Implementation - Information Technology Group",
           managerPositionShortName:
             "Divisional Head System Development & Implementation",
-          userComment: "IX-Testing",
-          level: "Level 2",
-          remarks: [
-            {
-              level: "Level 2",
-              remark: "IX-Testing",
-            },
-          ],
+          userComment: null,
+          remarks: [],
         },
       ],
     },
