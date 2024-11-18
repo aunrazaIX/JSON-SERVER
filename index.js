@@ -1112,7 +1112,7 @@ app.get("/api/LeaveManagement/GetPendingLeaveRequestDetails", (req, res) => {
       endDate: "2024-11-06T00:00:00",
       leaveDays: 1,
       leaveStatus: "Pending",
-      managerHistories: [
+      approvalHistory: [
         {
           level: "Level 1",
           actionType: "RESPOND",
@@ -1120,29 +1120,31 @@ app.get("/api/LeaveManagement/GetPendingLeaveRequestDetails", (req, res) => {
           originalRecipient: "MATEEQ",
           fromUser: "Zohaib Ghaffar - 32722",
           toUser: "Muhammad Ateeq Ur Rehman - 21686",
-          notificationId: 19491690,
+          notificationId: 19491711,
           managerEIN: "21686",
           managerUserName: "Muhammad Ateeq Ur Rehman",
           managerPosition:
             "Unit Head System Implementation.System Implementation - Information Technology Group",
           managerPositionShortName: "Unit Head System Implementation",
-          userComment: "for the testing purpose - IX",
+          userComment: "ix-LATEST_TESTING",
+          remarks: [],
         },
         {
           level: "Level 2",
-          actionType: "RESPOND",
-          actionSource: "REJECTED",
+          actionType: "SEND",
+          actionSource: "API",
           originalRecipient: "GHUSSAIN01",
           fromUser: "Muhammad Ateeq Ur Rehman - 21686",
           toUser: "Ghulam Hussain - 16946",
-          notificationId: 19491692,
+          notificationId: 19491713,
           managerEIN: "16946",
           managerUserName: "Ghulam Hussain",
           managerPosition:
             "Divisional Head System Development & Implementation.System Development & Implementation - Information Technology Group",
           managerPositionShortName:
             "Divisional Head System Development & Implementation",
-          userComment: "IX-Testing",
+          userComment: null,
+          remarks: [],
         },
       ],
     },
