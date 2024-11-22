@@ -103,8 +103,8 @@ const authenticateUser = async (req, res) => {
       body?.fingerPrintKey
         ? { fingerPrintKey: body.fingerPrintKey }
         : {
-          $or: [{ email: body.email }, { phoneNumber: body.email }],
-        }
+            $or: [{ email: body.email }, { phoneNumber: body.email }],
+          }
     );
     if (!user) {
       return res.status(400).send({
@@ -262,9 +262,12 @@ const resetPassword = async (req, res) => {
       });
       if (_user) {
         _user.password = await bcrypt.hash(body.password, 10);
-        await User.updateOne({
-          $or: [{ email: body.email }, { phoneNumber: body.email }],
-        }, _user);
+        await User.updateOne(
+          {
+            $or: [{ email: body.email }, { phoneNumber: body.email }],
+          },
+          _user
+        );
         await Otp.deleteOne({ email: body.email });
         return res.status(200).send({ message: messages.passwordReset });
       }
@@ -652,7 +655,9 @@ const getMyEarnings = async (req, res) => {
     if (startDate && endDate) {
       filter = { ...filter, createdAt: { $gte: startDate, $lte: endDate } };
     }
-    let shipments = await Shipments.find(filter).sort({ createdAt: -1 }).populate("quotation");
+    let shipments = await Shipments.find(filter)
+      .sort({ createdAt: -1 })
+      .populate("quotation");
     const riderAmountByMonth = [0, 0, 0, 0, 0];
     if (shipments?.length > 0) {
       shipments = JSON.parse(JSON.stringify(shipments));

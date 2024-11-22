@@ -15,7 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.post("/api/Account/Login", (req, res) => {
-  console.log(req.body);
   return res.status(200).send({
     success: true,
     data: {
@@ -1336,6 +1335,218 @@ app.post("/api/LeaveManagement/CreateLeaveRequest", (req, res) => {
     success: true,
     data: null,
     message: "Pending approval details fetched successfully!",
+  });
+});
+app.get("/api/Theme/GetAllSplashScreens", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: {
+      splashScreens: [
+        {
+          imageId: 21,
+          imageUrl: "string",
+          imageDescription: "string",
+          isActive: 0,
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-09-02T12:01:13",
+        },
+        {
+          imageId: 7,
+          imageUrl:
+            "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
+          imageDescription: "string",
+          isActive: 0,
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-08-30T16:52:41",
+        },
+        {
+          imageId: 6,
+          imageUrl: "string",
+          imageDescription: "string",
+          isActive: 0,
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-08-30T15:17:45",
+        },
+        {
+          imageId: 5,
+          imageUrl: "string",
+          imageDescription: "string",
+          isActive: 0,
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-08-30T15:17:39",
+        },
+        {
+          imageId: 2,
+          imageUrl: "krjt/ejrt/google.com",
+          imageDescription: "asdsadasda",
+          isActive: 0,
+          createdBy: "me test",
+          modifiedOn: null,
+          createdOn: "2024-08-30T14:52:07",
+        },
+      ],
+      currentPage: 1,
+      pageSize: 10,
+      totalRecords: 5,
+      totalPages: 1,
+    },
+    message: "success",
+  });
+});
+
+app.get("/api/UserRatings/GetAllRatings", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: {
+      ratings: [
+        {
+          ratingId: 9,
+          ratedBy: "3574",
+          ratingVersion: "1.0",
+          ratings: 3,
+          employeeDetails: {
+            employeeName: "Syed Ejaz Ali Gilani",
+            ein: "3574",
+            grade: "OG-I",
+            designation:
+              "NA.0829 - Branch - Bank Squre Muzad - CRBG (GHQs/RHQs/Branches)",
+            emailAddress: null,
+            mobileNumber: null,
+            placeOfPosting: null,
+            organization:
+              "0829 - Branch - Bank Squre Muzad - CRBG (GHQs/RHQs/Branches)",
+            joiningDate: "1969-01-13T00:00:00",
+          },
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-09-18T12:19:47",
+        },
+      ],
+      totalPages: 1,
+      currentPage: 1,
+      totalRecords: 1,
+    },
+    message: "Ratings fetched successfully",
+  });
+});
+
+app.post("/api/Theme/MarkActiveInActive", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "success",
+  });
+});
+
+app.post("/api/Theme/DeleteScreen", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "success",
+  });
+});
+
+app.get("/api/logs/GetAllLogs", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: {
+      logs: [
+        {
+          logId: 33,
+          employeeName: "string",
+          screenName: "string",
+          actionDetails: "string",
+          createdBy: "null",
+          modifiedOn: null,
+          createdOn: "2024-09-03T10:49:34",
+        },
+        {
+          logId: 33,
+          employeeName: "abc",
+          screenName: "fgh",
+          actionDetails: "string",
+          createdBy: null,
+          modifiedOn: "2029-09-03T10:49:34",
+          createdOn: "2024-09-03T10:49:34",
+        },
+        {
+          logId: 33,
+          employeeName: "string",
+          screenName: "string",
+          actionDetails: "jhfjaf",
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2025-09-03T10:49:34",
+        },
+      ],
+      currentPage: 1,
+      pageSize: 10,
+      totalRecords: 2,
+      totalPages: 1,
+    },
+    message: "success",
+  });
+});
+
+app.post("/api/UsefulLinks/GetLinks", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: {
+      useFullLinks: [
+        {
+          linkId: 33,
+          linkName: "string",
+          linkUrl:
+            "https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg",
+          linkType: 2,
+          tags: "string",
+          description: "string",
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-09-03T10:49:34",
+        },
+        {
+          linkId: 32,
+          linkName: "asdsada",
+          linkUrl: "asdasdasda",
+          linkType: 2,
+          tags: "string",
+          description: "ASDSadasda",
+          createdBy: null,
+          modifiedOn: null,
+          createdOn: "2024-09-02T15:59:54",
+        },
+      ],
+      currentPage: 1,
+      pageSize: 10,
+      totalRecords: 2,
+      totalPages: 1,
+    },
+    message: "success",
+  });
+});
+
+app.post("/api/UsefulLinks/DeleteLink", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "success",
+  });
+});
+
+app.post("/api/Theme/AddNewSplash", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "success",
+  });
+});
+
+app.post("/api/General/UploadFile", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: "https://localhost:7092/UploadDoc/117a0737-ec48-40cd-920c-15dd849bb9a7.png",
+    message: "File Path successfully fetch",
   });
 });
 
