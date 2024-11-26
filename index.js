@@ -1273,6 +1273,8 @@ app.get("/api/PendingApprovals/GetPendingApprovalDetails", (req, res) => {
   });
 });
 app.post("/api/PendingApprovals/ProcessPendingApproval", (req, res) => {
+  console.log(req.body);
+
   res.status(200).send({
     success: true,
     data: {
@@ -1538,6 +1540,7 @@ app.post("/api/UsefulLinks/DeleteLink", (req, res) => {
 app.post("/api/Theme/AddNewSplash", (req, res) => {
   res.status(200).send({
     success: true,
+    data: req.body,
     message: "success",
   });
 });
@@ -1546,6 +1549,13 @@ app.post("/api/General/UploadFile", (req, res) => {
   res.status(200).send({
     success: true,
     data: "https://localhost:7092/UploadDoc/117a0737-ec48-40cd-920c-15dd849bb9a7.png",
+    message: "File Path successfully fetch",
+  });
+});
+app.post("/api/UsefulLinks/CreateLinks", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: req.body,
     message: "File Path successfully fetch",
   });
 });

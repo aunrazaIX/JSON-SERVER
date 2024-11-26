@@ -1273,6 +1273,8 @@ app.get("/api/PendingApprovals/GetPendingApprovalDetails", (req, res) => {
   });
 });
 app.post("/api/PendingApprovals/ProcessPendingApproval", (req, res) => {
+  console.log(req.body);
+
   res.status(200).send({
     success: true,
     data: {
