@@ -18,9 +18,90 @@ app.post("/api/Account/Login", (req, res) => {
   return res.status(200).send({
     success: true,
     data: {
-      ein: "3574",
       token:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJaR0hBRkZBUkBBQkwuQ09NLlBLIiwianRpIjoiZGY0OTNkNTEtZmE2MS00ZTExLWExZjUtODEyZmQ0MTFhZDhkIiwiVXNlcklkIjoiNTM1NDIiLCJFbXBsb3llZUlkIjoiMjA0ODA5IiwiRW1wbG95ZWVOdW1iZXIiOiIzMjcyMiIsIlVzZXJUeXBlIjoiT0FNIiwiZXhwIjoxNzI2NzM2NDExLCJpc3MiOiJhcGkuYWJsLmNvbS5wayIsImF1ZCI6InguYWJsLmNvbSJ9.4CAO780ALmaDTM5uIKxttKh2GyA3xs70DQCbGl4l3qM",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJaR0hBRkZBUkBBQkwuQ09NLlBLIiwianRpIjoiMDcxYjhiM2YtNzMzZC00MWM1LTlkNzktMjZmYzIxMjg3MTJiIiwiVXNlcklkIjoiNTM1NDIiLCJFbXBsb3llZUlkIjoiMjA0ODA5IiwiRW1wbG95ZWVOdW1iZXIiOiIzMjcyMiIsIlVzZXJUeXBlIjoiT0FNIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IlpHSEFGRkFSQEFCTC5DT00uUEsiLCJleHAiOjE3MzMyOTUwMzksImlzcyI6ImFwaS5hYmwuY29tLnBrIiwiYXVkIjoieC5hYmwuY29tIn0.Zw4CBDd5qPq-wIhYnLBFo6INJL0tm8Fk2zLwlnwHVVk",
+      ein: "32722",
+      roles: [
+        {
+          roleId: 6,
+          roleTitle: "Default Role",
+          roleDescription: "This is the default role",
+          menus: [
+            {
+              roleId: 0,
+              menuId: 1,
+              menuName: "My Pending Requests",
+              sortNumber: 1,
+            },
+            {
+              roleId: 0,
+              menuId: 2,
+              menuName: "Employee Details",
+              sortNumber: 2,
+            },
+            {
+              roleId: 0,
+              menuId: 3,
+              menuName: "Recent HR Circulars",
+              sortNumber: 3,
+            },
+            {
+              roleId: 0,
+              menuId: 4,
+              menuName: "Pay Slips",
+              sortNumber: 4,
+            },
+            {
+              roleId: 0,
+              menuId: 5,
+              menuName: "Tax Certificate",
+              sortNumber: 5,
+            },
+            {
+              roleId: 0,
+              menuId: 6,
+              menuName: "Appraisal Letter",
+              sortNumber: 6,
+            },
+            {
+              roleId: 0,
+              menuId: 7,
+              menuName: "Claim Status",
+              sortNumber: 7,
+            },
+            {
+              roleId: 0,
+              menuId: 8,
+              menuName: "Leave Management",
+              sortNumber: 8,
+            },
+            {
+              roleId: 0,
+              menuId: 9,
+              menuName: "Loan History",
+              sortNumber: 9,
+            },
+            {
+              roleId: 0,
+              menuId: 10,
+              menuName: "Attendance Status",
+              sortNumber: 10,
+            },
+            {
+              roleId: 0,
+              menuId: 11,
+              menuName: "Useful Links",
+              sortNumber: 11,
+            },
+            {
+              roleId: 0,
+              menuId: 12,
+              menuName: "Rate This App",
+              sortNumber: 12,
+            },
+          ],
+        },
+      ],
     },
     message: "Authentication successful",
   });
@@ -1621,6 +1702,159 @@ app.post("/api/UsefulLinks/CreateLinks", (req, res) => {
     data: req.body,
     message: "File Path successfully fetch",
   });
+});
+app.get("/api/Roles/GetMenu", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: {
+        success: true,
+        data: [
+          {
+            menuId: 1,
+            menuName: "My Pending Requests",
+          },
+          {
+            menuId: 2,
+            menuName: "Employee Details",
+          },
+          {
+            menuId: 3,
+            menuName: "Recent HR Circulars",
+          },
+          {
+            menuId: 4,
+            menuName: "Pay Slips",
+          },
+          {
+            menuId: 5,
+            menuName: "Tax Certificate",
+          },
+          {
+            menuId: 6,
+            menuName: "Appraisal Letter",
+          },
+          {
+            menuId: 7,
+            menuName: "Claim Status",
+          },
+          {
+            menuId: 8,
+            menuName: "Leave Management",
+          },
+          {
+            menuId: 9,
+            menuName: "Loan History",
+          },
+          {
+            menuId: 10,
+            menuName: "Attendance Status",
+          },
+          {
+            menuId: 11,
+            menuName: "Useful Links",
+          },
+          {
+            menuId: 12,
+            menuName: "Rate This App",
+          },
+        ],
+        message: "File Path successfully fetch",
+      },
+      message: "File Path successfully fetch",
+    });
+  }, 5000);
+});
+app.post("/api/Roles/CreateRole", (req, res) => {
+  console.log(req.body);
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: {},
+      message: "asdasd",
+    });
+  }, 2000);
+});
+app.get("/api/Roles/GetEmployeesWithRoleDetails", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: {
+        employeeDetails: [
+          {
+            assignRoleId: 1,
+            roleId: 0,
+            ein: null,
+            status: 0,
+            employee: {
+              employeeName: "Muzaffar-Ud-Din Ahmed",
+              ein: "3564",
+              grade: "AVP",
+              designation: "NA.ABL Separated Employee",
+              emailAddress: null,
+              mobileNumber: null,
+              placeOfPosting: "0000-Allied Bank Limited",
+              organization: "ABL Separated Employee",
+              joiningDate: "1974-05-22T00:00:00",
+              approvalCount: 0,
+              employeeImageAvailable: null,
+              employeeImage: null,
+            },
+            role: {
+              roleId: 6,
+              roleTitle: "Default Role",
+              roleDescription: "This is the default role",
+              menus: [],
+              createdBy: null,
+              modifiedOn: null,
+              createdOn: null,
+            },
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: null,
+          },
+          {
+            assignRoleId: 2,
+            roleId: 0,
+            ein: null,
+            status: 0,
+            employee: {
+              employeeName: "Fakhur-Uz-Zaman",
+              ein: "3565",
+              grade: "MG9",
+              designation:
+                "Branch Manager.0684 - Branch - Survey Centre Br Karachi - CRBG (GHQs/RHQs/Branches)",
+              emailAddress: "Fakhruz.Zaman@abl.com",
+              mobileNumber: null,
+              placeOfPosting: "0684-Survey Centre Br Karachi",
+              organization:
+                "0684 - Branch - Survey Centre Br Karachi - CRBG (GHQs/RHQs/Branches)",
+              joiningDate: "1975-08-18T00:00:00",
+              approvalCount: 0,
+              employeeImageAvailable: null,
+              employeeImage: null,
+            },
+            role: {
+              roleId: 6,
+              roleTitle: "Default Role",
+              roleDescription: "This is the default role",
+              menus: [],
+              createdBy: null,
+              modifiedOn: null,
+              createdOn: null,
+            },
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: null,
+          },
+        ],
+        totalRecords: 2,
+        totalPages: 1,
+        currentPage: 1,
+      },
+      message: "Employee Role Details Fetched!",
+    });
+  }, 2000);
 });
 
 var server = http.createServer(app);
