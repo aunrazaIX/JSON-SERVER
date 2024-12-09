@@ -1532,108 +1532,110 @@ app.post("/api/Theme/DeleteScreen", (req, res) => {
 });
 
 app.get("/api/logs/GetAllLogs", (req, res) => {
-  res.status(200).send({
-    success: true,
-    data: {
-      logs: [
-        {
-          logId: 52,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:57:05",
-        },
-        {
-          logId: 51,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "HR Circulars",
-          actionDetails: "HR Circulars",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:56:47",
-        },
-        {
-          logId: 50,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "HR Circulars",
-          actionDetails: "HR Circulars",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:55:12",
-        },
-        {
-          logId: 49,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:54:53",
-        },
-        {
-          logId: 48,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:54:33",
-        },
-        {
-          logId: 47,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:54:11",
-        },
-        {
-          logId: 46,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:53:50",
-        },
-        {
-          logId: 45,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:53:32",
-        },
-        {
-          logId: 44,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "HR Circulars",
-          actionDetails: "HR Circulars",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:42:36",
-        },
-        {
-          logId: 43,
-          employeeName: "Zohaib Ghaffar",
-          screenName: "UsefulLinks",
-          actionDetails: "UsefulLinks Fetched",
-          createdBy: null,
-          modifiedOn: null,
-          createdOn: "2024-10-22T13:37:39",
-        },
-      ],
-      currentPage: 1,
-      pageSize: 10,
-      totalRecords: 24,
-      totalPages: 3,
-    },
-    message: "success",
-  });
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: {
+        logs: [
+          {
+            logId: 52,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:57:05",
+          },
+          {
+            logId: 51,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "HR Circulars",
+            actionDetails: "HR Circulars",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:56:47",
+          },
+          {
+            logId: 50,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "HR Circulars",
+            actionDetails: "HR Circulars",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:55:12",
+          },
+          {
+            logId: 49,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:54:53",
+          },
+          {
+            logId: 48,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:54:33",
+          },
+          {
+            logId: 47,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:54:11",
+          },
+          {
+            logId: 46,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:53:50",
+          },
+          {
+            logId: 45,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:53:32",
+          },
+          {
+            logId: 44,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "HR Circulars",
+            actionDetails: "HR Circulars",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:42:36",
+          },
+          {
+            logId: 43,
+            employeeName: "Zohaib Ghaffar",
+            screenName: "UsefulLinks",
+            actionDetails: "UsefulLinks Fetched",
+            createdBy: null,
+            modifiedOn: null,
+            createdOn: "2024-10-22T13:37:39",
+          },
+        ],
+        currentPage: 1,
+        pageSize: 10,
+        totalRecords: 24,
+        totalPages: 3,
+      },
+      message: "success",
+    });
+  }, 2000);
 });
 
 app.post("/api/UsefulLinks/GetLinks", (req, res) => {
@@ -1853,6 +1855,212 @@ app.get("/api/Roles/GetEmployeesWithRoleDetails", (req, res) => {
         currentPage: 1,
       },
       message: "Employee Role Details Fetched!",
+    });
+  }, 2000);
+});
+app.get("/api/Roles/GetAllRoles", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+
+      data: [
+        {
+          roleId: 6,
+
+          roleTitle: "Test Role",
+
+          roleDescription: null,
+
+          menus: [
+            {
+              roleId: 0,
+
+              menuId: 1,
+
+              menuName: "My Pending Requests",
+
+              sortNumber: 1,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 2,
+
+              menuName: "Employee Details",
+
+              sortNumber: 2,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 3,
+
+              menuName: "Recent HR Circulars",
+
+              sortNumber: 3,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 4,
+
+              menuName: "Pay Slips",
+
+              sortNumber: 4,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 5,
+
+              menuName: "Tax Certificate",
+
+              sortNumber: 5,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 6,
+
+              menuName: "Appraisal Letter",
+
+              sortNumber: 6,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 7,
+
+              menuName: "Claim Status",
+
+              sortNumber: 7,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 8,
+
+              menuName: "Leave Management",
+
+              sortNumber: 8,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 9,
+
+              menuName: "Loan History",
+
+              sortNumber: 9,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 10,
+
+              menuName: "Attendance Status",
+
+              sortNumber: 10,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 11,
+
+              menuName: "Useful Links",
+
+              sortNumber: 11,
+            },
+
+            {
+              roleId: 0,
+
+              menuId: 12,
+
+              menuName: "Rate This App",
+
+              sortNumber: 12,
+            },
+          ],
+        },
+      ],
+
+      message: "Roles Fetched!",
+    });
+  }, 2000);
+});
+app.post("/api/Roles/UpdateAssignedRole", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({ success: true, data: null, message: "" });
+  }, 2000);
+});
+app.get("/api/Account/GetAllUsers", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: {
+        userDetails: [
+          {
+            employeeNumber: "12345",
+            isActive: 1,
+            roleId: 3,
+            employeeName: "John Doe",
+            cnic: "42101-1234567-1",
+            grade: "G5",
+            position: "Software Engineer",
+            postingPlace: "Karachi",
+            addressLine1: "Street 1",
+            addressLine2: "Block 3",
+            addressLine3: "Area XYZ",
+            townOrCity: "Karachi",
+            phoneNumber: "0312-3456789",
+            joiningDate: "2020-01-15T00:00:00",
+            emailAddress: "john.doe@example.com",
+            organizationName: "ABC Corp",
+          },
+          {
+            employeeNumber: "67890",
+            isActive: 0,
+            roleId: 5,
+            employeeName: "Jane Smith",
+            cnic: "42201-9876543-2",
+            grade: "G7",
+            position: "HR Manager",
+            postingPlace: "Lahore",
+            addressLine1: "House 25",
+            addressLine2: "Society A",
+            addressLine3: "Block B",
+            townOrCity: "Lahore",
+            phoneNumber: "0321-9876543",
+            joiningDate: "2018-05-10T00:00:00",
+            emailAddress: "jane.smith@example.com",
+            organizationName: "XYZ Inc",
+          },
+        ],
+        totalRecords: 50,
+        totalPages: 5,
+        currentPage: 1,
+      },
+      message: "ADSADADA",
+    });
+  }, 2000);
+});
+app.post("/api/Roles/AssignRoleToMultipleUsers", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: "ADSADADA",
     });
   }, 2000);
 });
