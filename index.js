@@ -21,87 +21,85 @@ app.post("/api/Account/Login", (req, res) => {
       token:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJaR0hBRkZBUkBBQkwuQ09NLlBLIiwianRpIjoiMDcxYjhiM2YtNzMzZC00MWM1LTlkNzktMjZmYzIxMjg3MTJiIiwiVXNlcklkIjoiNTM1NDIiLCJFbXBsb3llZUlkIjoiMjA0ODA5IiwiRW1wbG95ZWVOdW1iZXIiOiIzMjcyMiIsIlVzZXJUeXBlIjoiT0FNIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6IlpHSEFGRkFSQEFCTC5DT00uUEsiLCJleHAiOjE3MzMyOTUwMzksImlzcyI6ImFwaS5hYmwuY29tLnBrIiwiYXVkIjoieC5hYmwuY29tIn0.Zw4CBDd5qPq-wIhYnLBFo6INJL0tm8Fk2zLwlnwHVVk",
       ein: "32722",
-      roles: [
-        {
-          roleId: 6,
-          roleTitle: "Default Role",
-          roleDescription: "This is the default role",
-          menus: [
-            {
-              roleId: 0,
-              menuId: 1,
-              menuName: "My Pending Requests",
-              sortNumber: 1,
-            },
-            {
-              roleId: 0,
-              menuId: 2,
-              menuName: "Employee Details",
-              sortNumber: 2,
-            },
-            {
-              roleId: 0,
-              menuId: 3,
-              menuName: "Recent HR Circulars",
-              sortNumber: 3,
-            },
-            {
-              roleId: 0,
-              menuId: 4,
-              menuName: "Pay Slips",
-              sortNumber: 4,
-            },
-            {
-              roleId: 0,
-              menuId: 5,
-              menuName: "Tax Certificate",
-              sortNumber: 5,
-            },
-            {
-              roleId: 0,
-              menuId: 6,
-              menuName: "Appraisal Letter",
-              sortNumber: 6,
-            },
-            {
-              roleId: 0,
-              menuId: 7,
-              menuName: "Claim Status",
-              sortNumber: 7,
-            },
-            {
-              roleId: 0,
-              menuId: 8,
-              menuName: "Leave Management",
-              sortNumber: 8,
-            },
-            {
-              roleId: 0,
-              menuId: 9,
-              menuName: "Loan History",
-              sortNumber: 9,
-            },
-            {
-              roleId: 0,
-              menuId: 10,
-              menuName: "Attendance Status",
-              sortNumber: 10,
-            },
-            {
-              roleId: 0,
-              menuId: 11,
-              menuName: "Useful Links",
-              sortNumber: 11,
-            },
-            {
-              roleId: 0,
-              menuId: 12,
-              menuName: "Rate This App",
-              sortNumber: 12,
-            },
-          ],
-        },
-      ],
+      roles: {
+        roleId: 6,
+        roleTitle: "Default Role",
+        roleDescription: "This is the default role",
+        menus: [
+          {
+            roleId: 0,
+            menuId: 1,
+            menuName: "My Pending Requests",
+            sortNumber: 1,
+          },
+          {
+            roleId: 0,
+            menuId: 2,
+            menuName: "Employee Details",
+            sortNumber: 2,
+          },
+          {
+            roleId: 0,
+            menuId: 3,
+            menuName: "Recent HR Circulars",
+            sortNumber: 3,
+          },
+          {
+            roleId: 0,
+            menuId: 4,
+            menuName: "Pay Slips",
+            sortNumber: 4,
+          },
+          {
+            roleId: 0,
+            menuId: 5,
+            menuName: "Tax Certificate",
+            sortNumber: 5,
+          },
+          {
+            roleId: 0,
+            menuId: 6,
+            menuName: "Appraisal Letter",
+            sortNumber: 6,
+          },
+          {
+            roleId: 0,
+            menuId: 7,
+            menuName: "Claim Status",
+            sortNumber: 7,
+          },
+          {
+            roleId: 0,
+            menuId: 8,
+            menuName: "Leave Management",
+            sortNumber: 8,
+          },
+          {
+            roleId: 0,
+            menuId: 9,
+            menuName: "Loan History",
+            sortNumber: 9,
+          },
+          {
+            roleId: 0,
+            menuId: 10,
+            menuName: "Attendance Status",
+            sortNumber: 10,
+          },
+          {
+            roleId: 0,
+            menuId: 11,
+            menuName: "Useful Links",
+            sortNumber: 11,
+          },
+          {
+            roleId: 0,
+            menuId: 12,
+            menuName: "Rate This App",
+            sortNumber: 12,
+          },
+        ],
+      },
     },
     message: "Authentication successful",
   });
@@ -1480,7 +1478,6 @@ app.get("/api/Theme/GetAllSplashScreens", (req, res) => {
     message: "success",
   });
 });
-
 app.get("/api/UserRatings/GetAllRatings", (req, res) => {
   res.status(200).send({
     success: true,
@@ -1516,21 +1513,18 @@ app.get("/api/UserRatings/GetAllRatings", (req, res) => {
     message: "Ratings fetched successfully",
   });
 });
-
 app.post("/api/Theme/MarkActiveInActive", (req, res) => {
   res.status(200).send({
     success: true,
     message: "success",
   });
 });
-
 app.post("/api/Theme/DeleteScreen", (req, res) => {
   res.status(200).send({
     success: true,
     message: "success",
   });
 });
-
 app.get("/api/logs/GetAllLogs", (req, res) => {
   setTimeout(() => {
     res.status(200).send({
@@ -1637,7 +1631,6 @@ app.get("/api/logs/GetAllLogs", (req, res) => {
     });
   }, 2000);
 });
-
 app.post("/api/UsefulLinks/GetLinks", (req, res) => {
   res.status(200).send({
     success: true,
@@ -1675,14 +1668,12 @@ app.post("/api/UsefulLinks/GetLinks", (req, res) => {
     message: "success",
   });
 });
-
 app.post("/api/UsefulLinks/DeleteLink", (req, res) => {
   res.status(200).send({
     success: true,
     message: "success",
   });
 });
-
 app.post("/api/Theme/AddNewSplash", (req, res) => {
   res.status(200).send({
     success: true,
@@ -1690,7 +1681,6 @@ app.post("/api/Theme/AddNewSplash", (req, res) => {
     message: "success",
   });
 });
-
 app.post("/api/General/UploadFile", (req, res) => {
   res.status(200).send({
     success: true,
@@ -2056,6 +2046,26 @@ app.get("/api/Account/GetAllUsers", (req, res) => {
   }, 2000);
 });
 app.post("/api/Roles/AssignRoleToMultipleUsers", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: "ADSADADA",
+    });
+  }, 2000);
+});
+app.post("/api/UsefulLinks/UpdateLink", (req, res) => {
+  console.log(req.body);
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: "ADSADADA",
+    });
+  }, 2000);
+});
+app.put("/api/UsefulLinks/UpdateLink", (req, res) => {
+  console.log(req.body);
   setTimeout(() => {
     res.status(200).send({
       success: true,
