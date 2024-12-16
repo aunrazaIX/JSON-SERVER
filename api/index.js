@@ -320,7 +320,7 @@ app.get("/api/AttendanceHistory/GetAttendanceHistoryByEIN", (req, res) => {
         timeIn: null,
         timeOut: null,
         attendanceType: "Rest Day",
-        attendanceDate: "2023-09-30T00:00:00",
+        attendanceDate: "2024-12-30T00:00:00",
       },
     ],
     message: "Attendance history fetched successfully!",
@@ -2051,6 +2051,15 @@ app.put("/api/UsefulLinks/UpdateLink", (req, res) => {
       success: true,
       data: null,
       message: "ADSADADA",
+    });
+  }, 2000);
+});
+app.put("/api/Account/UpdateUserStatusByEIN", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: null,
     });
   }, 2000);
 });

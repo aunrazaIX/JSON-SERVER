@@ -320,7 +320,7 @@ app.get("/api/AttendanceHistory/GetAttendanceHistoryByEIN", (req, res) => {
         timeIn: null,
         timeOut: null,
         attendanceType: "Rest Day",
-        attendanceDate: "2023-09-30T00:00:00",
+        attendanceDate: "2024-12-30T00:00:00",
       },
     ],
     message: "Attendance history fetched successfully!",
@@ -1875,26 +1875,6 @@ app.get("/api/Roles/GetAllRoles", (req, res) => {
             {
               roleId: 0,
 
-              menuId: 2,
-
-              menuName: "Employee Details",
-
-              sortNumber: 2,
-            },
-
-            {
-              roleId: 0,
-
-              menuId: 3,
-
-              menuName: "Recent HR Circulars",
-
-              sortNumber: 3,
-            },
-
-            {
-              roleId: 0,
-
               menuId: 4,
 
               menuName: "Pay Slips",
@@ -1932,15 +1912,15 @@ app.get("/api/Roles/GetAllRoles", (req, res) => {
               sortNumber: 7,
             },
 
-            {
-              roleId: 0,
+            // {
+            //   roleId: 0,
 
-              menuId: 8,
+            //   menuId: 8,
 
-              menuName: "Leave Management",
+            //   menuName: "Leave Management",
 
-              sortNumber: 8,
-            },
+            //   sortNumber: 8,
+            // },
 
             {
               roleId: 0,
@@ -1952,15 +1932,15 @@ app.get("/api/Roles/GetAllRoles", (req, res) => {
               sortNumber: 9,
             },
 
-            {
-              roleId: 0,
+            // {
+            //   roleId: 0,
 
-              menuId: 10,
+            //   menuId: 10,
 
-              menuName: "Attendance Status",
+            //   menuName: "Attendance",
 
-              sortNumber: 10,
-            },
+            //   sortNumber: 10,
+            // },
 
             {
               roleId: 0,
@@ -1977,7 +1957,7 @@ app.get("/api/Roles/GetAllRoles", (req, res) => {
 
               menuId: 12,
 
-              menuName: "Rate This App",
+              menuName: "Rate This ",
 
               sortNumber: 12,
             },
@@ -2071,6 +2051,15 @@ app.put("/api/UsefulLinks/UpdateLink", (req, res) => {
       success: true,
       data: null,
       message: "ADSADADA",
+    });
+  }, 2000);
+});
+app.put("/api/Account/UpdateUserStatusByEIN", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: null,
     });
   }, 2000);
 });
