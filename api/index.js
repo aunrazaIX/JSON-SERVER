@@ -432,42 +432,35 @@ app.get("/api/LoanHistory/GetLoanHistoryByEIN", (req, res) => {
     success: true,
     data: [
       {
-        loanType: "Personal Loan",
-        totalAmountPaid: 1200000,
-        totalDueLoan: 1015350,
-        installmentAmount: 6155,
+        loanType: "Car Lease",
+        totalAmountPaid: 650000,
+        totalDueLoan: 0,
+        installmentAmount: 9496,
         payMonth: "2023-02-24T00:00:00",
         paymentDate: "2023-02-24T00:00:00",
       },
       {
-        loanType: "House Building",
-        totalAmountPaid: 1200000,
-        totalDueLoan: 1015350,
-        installmentAmount: 6155,
+        loanType: "Personal Loan",
+        totalAmountPaid: 350000,
+        totalDueLoan: 323924,
+        installmentAmount: 14901,
         payMonth: "2023-02-24T00:00:00",
         paymentDate: "2023-02-24T00:00:00",
       },
+      {
+        loanType: "Personal Loan",
+        totalAmountPaid: 200000,
+        totalDueLoan: 0,
+        installmentAmount: 7423,
+        payMonth: "2023-02-24T00:00:00",
+        paymentDate: "2023-02-24T00:00:00",
+      },
+
       {
         loanType: "Motorcycle Loan",
-        totalAmountPaid: 1200000,
-        totalDueLoan: 1015350,
-        installmentAmount: 6155,
-        payMonth: "2023-02-24T00:00:00",
-        paymentDate: "2023-02-24T00:00:00",
-      },
-      {
-        loanType: "Car Ijarah",
-        totalAmountPaid: 1200000,
-        totalDueLoan: 1015350,
-        installmentAmount: 6155,
-        payMonth: "2023-02-24T00:00:00",
-        paymentDate: "2023-02-24T00:00:00",
-      },
-      {
-        loanType: "Car Lease",
-        totalAmountPaid: 1200000,
-        totalDueLoan: 1015350,
-        installmentAmount: 6155,
+        totalAmountPaid: 120000,
+        totalDueLoan: 80175,
+        installmentAmount: 2691,
         payMonth: "2023-02-24T00:00:00",
         paymentDate: "2023-02-24T00:00:00",
       },
@@ -2019,7 +2012,7 @@ app.get("/api/Account/GetAllUsers", (req, res) => {
         ],
         totalRecords: 50,
         totalPages: 5,
-        currentPage: 1,
+        currentPage: req?.query?.page,
       },
       message: "ADSADADA",
     });
@@ -2054,7 +2047,7 @@ app.put("/api/UsefulLinks/UpdateLink", (req, res) => {
     });
   }, 2000);
 });
-app.put("/api/Account/UpdateUserStatusByEIN", (req, res) => {
+app.put("/api/Account/UpdateUserStatuses", (req, res) => {
   setTimeout(() => {
     res.status(200).send({
       success: true,
@@ -2062,6 +2055,22 @@ app.put("/api/Account/UpdateUserStatusByEIN", (req, res) => {
       message: null,
     });
   }, 2000);
+});
+app.post("/api/Roles/UpdateRole", (req, res) => {
+  setTimeout(() => {
+    res.status(200).send({
+      success: true,
+      data: null,
+      message: null,
+    });
+  }, 2000);
+});
+app.get("/api/Dashboard/GetDashboardStats", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: { totalUsers: 0, activeUsers: 0, inactiveUsers: 0 },
+    message: "string",
+  });
 });
 
 var server = http.createServer(app);
