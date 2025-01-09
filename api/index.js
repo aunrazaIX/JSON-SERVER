@@ -98,6 +98,12 @@ app.post("/api/Account/Login", (req, res) => {
             menuName: "Rate This App",
             sortNumber: 12,
           },
+          {
+            roleId: 0,
+            menuId: 13,
+            menuName: "Admin Portal",
+            sortNumber: 13,
+          },
         ],
       },
     },
@@ -1692,60 +1698,56 @@ app.get("/api/Roles/GetMenu", (req, res) => {
   setTimeout(() => {
     res.status(200).send({
       success: true,
-      data: {
-        success: true,
-        data: [
-          {
-            menuId: 1,
-            menuName: "My Pending Requests",
-          },
-          {
-            menuId: 2,
-            menuName: "Employee Details",
-          },
-          {
-            menuId: 3,
-            menuName: "Recent HR Circulars",
-          },
-          {
-            menuId: 4,
-            menuName: "Pay Slips",
-          },
-          {
-            menuId: 5,
-            menuName: "Tax Certificate",
-          },
-          {
-            menuId: 6,
-            menuName: "Appraisal Letter",
-          },
-          {
-            menuId: 7,
-            menuName: "Claim Status",
-          },
-          {
-            menuId: 8,
-            menuName: "Leave Management",
-          },
-          {
-            menuId: 9,
-            menuName: "Loan History",
-          },
-          {
-            menuId: 10,
-            menuName: "Attendance Status",
-          },
-          {
-            menuId: 11,
-            menuName: "Useful Links",
-          },
-          {
-            menuId: 12,
-            menuName: "Rate This App",
-          },
-        ],
-        message: "File Path successfully fetch",
-      },
+      data: [
+        {
+          menuId: 1,
+          menuName: "My Pending Requests",
+        },
+        {
+          menuId: 2,
+          menuName: "Employee Details",
+        },
+        {
+          menuId: 3,
+          menuName: "Recent HR Circulars",
+        },
+        {
+          menuId: 4,
+          menuName: "Pay Slips",
+        },
+        {
+          menuId: 5,
+          menuName: "Tax Certificate",
+        },
+        {
+          menuId: 6,
+          menuName: "Appraisal Letter",
+        },
+        {
+          menuId: 7,
+          menuName: "Claim Status",
+        },
+        {
+          menuId: 8,
+          menuName: "Leave Management",
+        },
+        {
+          menuId: 9,
+          menuName: "Loan History",
+        },
+        {
+          menuId: 10,
+          menuName: "Attendance Status",
+        },
+        {
+          menuId: 11,
+          menuName: "Useful Links",
+        },
+        {
+          menuId: 12,
+          menuName: "Rate This App",
+        },
+      ],
       message: "File Path successfully fetch",
     });
   }, 5000);
@@ -2066,6 +2068,13 @@ app.post("/api/Roles/UpdateRole", (req, res) => {
   }, 2000);
 });
 app.get("/api/Dashboard/GetDashboardStats", (req, res) => {
+  res.status(200).send({
+    success: true,
+    data: { totalUsers: 0, activeUsers: 0, inactiveUsers: 0 },
+    message: "string",
+  });
+});
+app.delete("/api/Roles/Delete", (req, res) => {
   res.status(200).send({
     success: true,
     data: { totalUsers: 0, activeUsers: 0, inactiveUsers: 0 },
