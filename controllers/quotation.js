@@ -86,14 +86,14 @@ const createQuotation = async (req, res) => {
       if (body.type === quotationType[0]) {
         let carrierCompensation =
           (mileage / 62) *
-          1.25 *
-          (body.estimatedWeight === estimatedWeightUnder2k[0]
-            ? 95
-            : body.estimatedWeight === estimatedWeightUnder2k[1]
+            1.25 *
+            (body.estimatedWeight === estimatedWeightUnder2k[0]
+              ? 95
+              : body.estimatedWeight === estimatedWeightUnder2k[1]
               ? 100
               : body.estimatedWeight == estimatedWeightUnder2k[2]
-                ? 105
-                : 110) +
+              ? 105
+              : 110) +
           (body?.cargoLoadedBy === cargoLoadedBy[1] ? 0 : 125) +
           (body?.cargoUnloadBy === cargoUnloadBy[1] ? 0 : 125) +
           (mileage / 9) * 4;
@@ -114,10 +114,10 @@ const createQuotation = async (req, res) => {
       if (body.type === quotationType[1]) {
         let carrierCompensation =
           (mileage / 62) *
-          1.25 *
-          (body.estimatedWeight === estimatedWeightUnderGeneralFreight[0]
-            ? 125
-            : body.estimatedWeight === estimatedWeightUnderGeneralFreight[1]
+            1.25 *
+            (body.estimatedWeight === estimatedWeightUnderGeneralFreight[0]
+              ? 125
+              : body.estimatedWeight === estimatedWeightUnderGeneralFreight[1]
               ? 130
               : 135) +
           (body?.cargoLoadedBy === cargoLoadedBy[1] ? 0 : 125) +
@@ -154,10 +154,10 @@ const createQuotation = async (req, res) => {
       if (body.type === quotationType[4]) {
         let carrierCompensation =
           (mileage / 62) *
-          1.25 *
-          (body.estimatedWeight === estimatedWeightFor26[0]
-            ? 110
-            : body.estimatedWeight === estimatedWeightFor26[1]
+            1.25 *
+            (body.estimatedWeight === estimatedWeightFor26[0]
+              ? 110
+              : body.estimatedWeight === estimatedWeightFor26[1]
               ? 115
               : 125) +
           (body?.cargoLoadedBy === cargoLoadedBy[1] ? 0 : 125) +
@@ -182,8 +182,12 @@ const createQuotation = async (req, res) => {
       quotation.redirectUri = quotation.redirectUri + `?id=${quotation?._id}`;
       await quotation.save();
       shortFormReview(
-        `Hello Hotshot received a quote request for a ${quotation.type
-        } on ${moment().utc(new Date()).local().format("ddd MMM D [at] hh:mm a")}`
+        `Hello Hotshot received a quote request for a ${
+          quotation.type
+        } on ${moment()
+          .utc(new Date())
+          .local()
+          .format("ddd MMM D [at] hh:mm a")}`
       );
       return res.status(200).send({
         message: "Quotation is sent to the admin for approval",
@@ -226,7 +230,7 @@ const sendQuotation = async (req, res) => {
           emailTo: quotation.email,
           subject: "Hello Hotshot - project quote",
           // message: messages.quotationText(quotation),
-          html: messages.quotationText(quotation)
+          html: messages.quotationText(quotation),
         });
       }
       if (quotation.quotationVia == quotationVia[1]) {
